@@ -68,7 +68,7 @@ has_one :address
 
 # addressテーブル 
 |Column|Type|Options|
-| ------ | ---------- | ------------------------------ |
+| ------ | ----------- | ------------------------------ |
 |postal_code|string|null:false|
 |prefecture_id|string|null:false|
 |municipalities|string|null:false|
