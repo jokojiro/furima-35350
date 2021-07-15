@@ -26,6 +26,7 @@ Things you may want to cover:
 ## usersテーブル 
 
 |Column|Type|Options|
+| ------ | ---------- | ------------------------------ |
 |nickname------------|string--|null:false|
 |email---------------|string--|null:false|
 |encrypted_password--|string--|null:false|
@@ -41,6 +42,7 @@ has_many :buy
 
 # itemsテーブル 
 |Column|Type|Options|
+| ------ | ---------- | ------------------------------ |
 |name------------|string----|null:false------|
 |description-----|string----|null:false------|
 |category_id-----|integer---|null:false------|
@@ -56,6 +58,7 @@ has_one :buy
 
 # buyテーブル 
 |Column|Type|Options|
+| ------ | ---------- | ------------------------------ |
 |user--|references--|foreign_key:true-|
 |item--|references--|foreign_key:true-|
 ### Association
@@ -65,6 +68,7 @@ has_one :address
 
 # addressテーブル 
 |Column|Type|Options|
+| ------ | ---------- | ------------------------------ |
 |postal_code----|string----|null:false-------|
 |prefecture_id--|string----|null:false-------|
 |municipalities-|string----|null:false-------|
