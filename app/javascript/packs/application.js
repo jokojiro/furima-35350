@@ -6,6 +6,7 @@
 import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+require("../item_price");
 
 Rails.start()
 ActiveStorage.start()
