@@ -43,7 +43,7 @@ has_many :buys
 # itemsテーブル 
 |Column|Type|Options|
 | ------ | ---------- | ------------------------------ |
-|name|string|null:false|
+|title|string|null:false|
 |description|text|null:false|
 |category_id|integer|null:false|
 |condition_id|integer|null:false|
