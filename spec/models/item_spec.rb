@@ -83,14 +83,14 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank", "Price is not included in the list", "Price is not a number")
       end
       it '価格範囲が300未満は登録できない' do
-        @item.price = '299'
+        @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include(Price is not included in the list)
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
       it '価格範囲が9,999,999より大きいと登録できない' do
-        @item.price = '10000000'
+        @item.price = 10000000
         @item.valid?
-        expect(@item.errors.full_messages).to include(Price is not included in the list)
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
       it '価格は半角数字でないければ登録できない' do
         @item.price = '１０００'
