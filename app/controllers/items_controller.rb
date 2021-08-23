@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
   before_action :set_item, only: [:show,:edit,:update,:destroy]
   before_action :move_to_index, only: [:edit,:update,:destroy]
+  before_action :sold_out,only: [:edit, :update, :destroy]
+
   def new
     @item = Item.new
   end
@@ -32,7 +34,7 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @item.destroy
     redirect_to root_path
@@ -48,6 +50,10 @@ class ItemsController < ApplicationController
     end
     def move_to_index
       redirect_to action: :index unless current_user.id == @item.user_id
+    end
+    
+    def sold_out
+      redirect_to root_path if @item.buy != nil
     end
   end
   
