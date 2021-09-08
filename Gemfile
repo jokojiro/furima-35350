@@ -59,14 +59,19 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development do
-  gem 'rubocop', require: false
-end
+gem 'rubocop', require: false
 gem 'devise'
 gem 'active_hash'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'payjp'	
 gem "aws-sdk-s3", require: false
+gem 'capistrano'
+gem 'capistrano-rbenv'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano3-unicorn'
+end
 
 group :production do
   gem 'unicorn', '5.4.1'
