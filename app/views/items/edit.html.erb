@@ -24,6 +24,19 @@ app/assets/stylesheets/items/new.css %>
         <%= f.file_field :images, name: 'item[images][]', id:"item-image" %>
       </div>
     </div>
+
+     <%# 出品画像のプレビュー %>
+    <div id="image-list"></div>
+    <div class='item-img-content'>
+      <%= image_tag @item.images[0] ,class:"images" %>
+
+      <div class="item-box-other-img">
+        <% @item.images.each do |image| %>
+          <%= image_tag image, class: 'edit-images-mini' %> 
+        <% end %> 
+      </div>
+    </div>
+    
     <%# /商品画像 %>
     <%# 商品名と商品説明 %>
     <div class="new-items">
